@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">WebMetGPIO</h1>
+    <form method="post">
+    <label>Output GPIO 22: </label>
+   <input type="checkbox" asp-for="Output22">
+    <br><br>
+    <label>Output GPIO 25: </label>
+   <input type="checkbox" asp-for="Output25">
+   <br><br>
+   Input 17:
+   @if(Model.Input17)
+    {<img src="led_aan.png" alt="led_aan"/>}
+    else
+     {<img src="led_uit.png" alt="led_uit"/>}  
+    <br><br>
+    Input 27:
+    @if(Model.Input27)
+    {<img src="led_aan.png" alt="led_aan"/>}
+    else
+    {<img src="led_uit.png" alt="led_uit"/>}
+       <br><br>
+    <button type="submit">Submit</button>
+</form>
+    
+</div>
